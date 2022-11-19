@@ -1,16 +1,17 @@
-import React from "react";
-import errorImg from "../../../public/assets/icons/404.png";
+import React from 'react';
+import errorImg from '../../../public/assets/icons/404.png';
 import './NotFound.scss';
-const NotFoundPage = () => {
+
+function NotFoundPage() {
   return (
     <div className="errorpage">
-      <img className="errorpage-image" src={errorImg} />
+      <img className="errorpage-image" src={errorImg} alt="errorimg" />
       <div className="errorpage-title">
         404
       </div>
       <div className="errorpage-title-text">Oh! Page not found</div>
     </div>
   );
-};
+}
 
 export default NotFoundPage;

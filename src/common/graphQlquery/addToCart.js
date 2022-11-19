@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
 const ADD_TO_CART = gql`
   mutation addToCart($id: ID!) {

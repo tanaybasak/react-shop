@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
 const GET_PRODUCTSBYID = gql`
   query ProductsById($productsById: ID!) {

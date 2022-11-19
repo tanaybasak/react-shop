@@ -1,7 +1,3 @@
-import React from "react";
-const Cart = () => {
-  return "Cart";
-};
-
+const Cart = () => 'Cart';
 
 export default Cart;

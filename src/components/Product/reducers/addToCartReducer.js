@@ -1,14 +1,14 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { addToCart } from "../actions";
+import { createSlice } from '@reduxjs/toolkit';
+import { addToCart } from '../actions';
 
 const initialState = {
   cartItems: {},
-  loading: "idle",
-  error: "",
+  loading: 'idle',
+  error: '',
 };
 
 const { actions, reducer } = createSlice({
-  name: "cart",
+  name: 'cart',
   initialState,
   reducers: {
     // Redux Toolkit allows us to write "mutating" logic in reducers. It
@@ -21,14 +21,14 @@ const { actions, reducer } = createSlice({
   extraReducers: {
     [addToCart.fulfilled]: (state, { meta, payload }) => {
       state.cartItems = payload;
-      state.loading = "idle";
+      state.loading = 'idle';
     },
     [addToCart.pending]: (state, { meta, payload }) => {
-      state.loading = "pending";
+      state.loading = 'pending';
     },
     [addToCart.rejected]: (state, { meta, payload, error }) => {
       state.cartItems = payload;
-      state.loading = "idle";
+      state.loading = 'idle';
       state.error = error;
     },
   },

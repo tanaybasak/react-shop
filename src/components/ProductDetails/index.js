@@ -1,34 +1,34 @@
-import { useQuery } from "@apollo/client";
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import GET_PRODUCTSBYID from "../../common/graphQlquery/getProductsById";
-import "./productDetails.scss";
-const ProductDetails = () => {
+import { useQuery } from '@apollo/client';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import GET_PRODUCTSBYID from '../../common/graphQlquery/getProductsById';
+import './productDetails.scss';
+
+function ProductDetails() {
   const { id } = useParams();
   const [productDetails, setProductDetails] = useState({});
   const {
-    loading: products_loading,
-    error: products_error,
-    data: products_data,
-    fetchMore,
+    loading: productsLoading,
+    error: productsError,
+    data: productsData,
   } = useQuery(GET_PRODUCTSBYID, {
     variables: {
       productsById: id,
     },
-    fetchPolicy: "network-only",
+    fetchPolicy: 'network-only',
 
     // notifyOnNetworkStatusChange: true,
   });
 
   useEffect(() => {
-    if (products_data) {
-      setProductDetails(products_data.productsById);
+    if (productsData) {
+      setProductDetails(productsData.productsById);
     }
-  }, [products_data]);
+  }, [productsData]);
 
-  if (products_loading) return "Loading...";
-  if (products_error) return new Error("ProductDetails error");
-  console.log(productDetails.overview);
+  if (productsLoading) return 'Loading...';
+  if (productsError) return new Error('ProductDetails error');
+
   return (
     <div className="pd">
       <div className="pd-leftcontainer">
@@ -46,14 +46,18 @@ const ProductDetails = () => {
         <div className="pd-title display-3">{productDetails.name}</div>
         <div className="pd-description lead">{productDetails.description}</div>
         <div className="pd-price lead pb-1">
-          <b> Rs. {productDetails.price}</b>
+          <b>
+            {' '}
+            Rs.
+            {productDetails.price}
+          </b>
         </div>
         <div className="pd-overview display-3">
           <b>Product Overview </b>
         </div>
         <div className="pd-overview-details">
           {productDetails.overview && (
-            <table class="table table-hover table-responsive table-borderless">
+            <table className="table table-hover table-responsive table-borderless">
               <tbody>
                 <tr>
                   <td>Brand</td>
@@ -90,6 +94,6 @@ const ProductDetails = () => {
       </div>
     </div>
   );
-};
+}
 
 export default ProductDetails;

@@ -1,6 +1,6 @@
-import { useMutation } from "@apollo/client";
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import ADD_TO_CART from "../../../common/graphQlquery/addToCart";
+import { useMutation } from '@apollo/client';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import ADD_TO_CART from '../../../common/graphQlquery/addToCart';
 // const [addCartItem, { loading, error, data }] = useLazyQuery(ADD_TO_CART);
 // export const fetchProducts = createAsyncThunk(
 //   'products/fetchProducts',
@@ -17,19 +17,19 @@ import ADD_TO_CART from "../../../common/graphQlquery/addToCart";
 // );
 
 export const addToCart = createAsyncThunk(
-  "products/addToCart",
+  'products/addToCart',
   async (id, { rejectWithValue }) => {
-    console.log('called')
+    console.log('called');
     const [addCartItem, { loading, error, data }] = useMutation(ADD_TO_CART);
 
     try {
       addCartItem({
         variables: {
-          id: id,
+          id,
         },
-      })
+      });
     } catch (err) {
       return rejectWithValue([], err);
     }
-  }
+  },
 );
