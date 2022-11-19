@@ -1,0 +1,19 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link-icons {
+    height: 1.5rem;
+    padding-right: 0.4rem;
+}
+
+.navbar .nav-link.active {
+    color: #fff;
+}
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.5);
+}

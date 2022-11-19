@@ -1,0 +1,9 @@
+{
+    "title": "Bienvenue dans l'application React qui est construite en utilisant Webpack et Babel séparément",
+    "navTitle" : "Bonjour, je suis de la navigation",
+    "cart": "Chariot",
+    "account": "Compte",
+    "logout": "Se déconnecter",
+    "brand": "réagir boutique",
+    "create": "créer"
+}
