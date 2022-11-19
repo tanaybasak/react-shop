@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useMutation, useQuery } from "@apollo/client";
-import GET_PRODUCTS from "./graphQlquery/getProducts";
+import GET_PRODUCTS from "../../common/graphQlquery/getProducts";
 // import ADD_TO_CART from "./graphQlquery/addToCart";
 // import { addToCart } from "./actions/index";
 import "./product.scss";

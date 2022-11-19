@@ -36,7 +36,6 @@ const AppRoutes = () => {
     },
   ]);
 
-  console.log(routes);
 
   return routes;
 };

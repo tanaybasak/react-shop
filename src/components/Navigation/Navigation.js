@@ -9,9 +9,9 @@ import create from "../../../public/assets/icons/create.avif";
 import { NavLink } from "react-router-dom";
 import ShopContext from "../../common/shopContext";
 import { useMutation, useQuery } from "@apollo/client";
-import ADD_TO_CART from "../Product/graphQlquery/addToCart";
+import ADD_TO_CART from "../../common/graphQlquery/addToCart";
 import "./Navigation.scss";
-import GET_CARTITEMS from "../Product/graphQlquery/getCartItems";
+import GET_CARTITEMS from "../../common/graphQlquery/getCartItems";
 
 function Navigation() {
   const { value } = useContext(ShopContext);

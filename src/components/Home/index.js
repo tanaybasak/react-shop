@@ -11,11 +11,9 @@ function Home() {
   };
 
   return (
-    <>
       <button className="login-btn" onClick={login}>
         Login
       </button>
-    </>
   );
 }
 

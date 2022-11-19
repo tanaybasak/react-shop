@@ -4,7 +4,7 @@ import Navigation from "../components/Navigation/Navigation";
 import AppRoutes from "./route";
 import ShopContext from "../common/shopContext";
 import { ErrorBoundary } from "react-error-boundary";
-import ErrorFallback from "../components/ErrorBoundary/ErrorBoundary";
+import ErrorFallback from "../components/ErrorBoundary";
 
 function Routing() {
   const [value, setValue] = useState({});

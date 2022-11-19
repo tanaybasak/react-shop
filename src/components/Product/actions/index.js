@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import ADD_TO_CART from "../graphQlquery/addToCart";
+import ADD_TO_CART from "../../../common/graphQlquery/addToCart";
 // const [addCartItem, { loading, error, data }] = useLazyQuery(ADD_TO_CART);
 // export const fetchProducts = createAsyncThunk(
 //   'products/fetchProducts',
