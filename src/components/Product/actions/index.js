@@ -17,19 +17,19 @@ import ADD_TO_CART from '../../../common/graphQlquery/addToCart';
 // );
 
 export const addToCart = createAsyncThunk(
-  'products/addToCart',
-  async (id, { rejectWithValue }) => {
-    console.log('called');
-    const [addCartItem, { loading, error, data }] = useMutation(ADD_TO_CART);
+	'products/addToCart',
+	async (id, { rejectWithValue }) => {
+		console.log('called');
+		const [addCartItem, { loading, error, data }] = useMutation(ADD_TO_CART);
 
-    try {
-      addCartItem({
-        variables: {
-          id,
-        },
-      });
-    } catch (err) {
-      return rejectWithValue([], err);
-    }
-  },
+		try {
+			addCartItem({
+				variables: {
+					id,
+				},
+			});
+		} catch (err) {
+			return rejectWithValue([], err);
+		}
+	},
 );

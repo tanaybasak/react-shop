@@ -5,5 +5,9 @@
     "account": "cuenta",
     "logout": "cerrar sesión",
     "brand": "reaccionar tienda",
-    "create": "crear"
+    "create": "crear",
+    "signIn" : "Iniciar sesión en su cuenta",
+    "email": "Dirección de correo electrónico",
+    "password": "Clave",
+    "login": "ACCESO"
 }

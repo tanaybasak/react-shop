@@ -1,5 +1,21 @@
-import { createContext } from 'react';
+import React, { createContext, useState } from 'react';
 
-const ShopContext = createContext(null);
+export const ShopContext = createContext(null);
 
-export default ShopContext;
+function Provider({ children }) {
+	const [cart, addToCartData] = useState(null);
+
+	return (
+		<ShopContext.Provider
+			value={{
+				cart,
+				updateCartItem: data => addToCartData(data),
+			}}
+		>
+			{children}
+		</ShopContext.Provider>
+	);
+};
+
+
+export default Provider;

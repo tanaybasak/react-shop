@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkclient=self.webpackChunkclient||[]).push([[272],{7272:(c,e,n)=>{n.r(e),n.d(e,{default:()=>t});const t=function(){return"Account"}}}]);

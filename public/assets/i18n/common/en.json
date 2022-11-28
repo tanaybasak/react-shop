@@ -3,7 +3,11 @@
     "navTitle": "Hello I am from Navigation",
     "cart": "Cart",
     "account": "Account",
+    "login": "LOGIN",
     "logout": "Logout",
     "brand": "React Shop",
-    "create": "Create"
+    "create": "Create",
+    "signIn": "Sign in to your account",
+    "email" : "Email address",
+    "password" : "Password"
 }

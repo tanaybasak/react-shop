@@ -1,0 +1,20 @@
+
+
+.flex-left, .flex-right {
+   flex: 50%;
+}
+
+.flex-container {
+    flex-direction: row;
+}
+
+.img_item {
+    height: 4rem;
+    padding: 1rem;
+}
+
+@media (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+    }
+  }

@@ -7,7 +7,10 @@ const GET_PRODUCTSBYID = gql`
       id
       image
       name
-      price
+      price {
+        initialPrice
+        totalPrice
+      }
       reviews {
         comment
         rating

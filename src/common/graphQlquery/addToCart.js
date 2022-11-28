@@ -4,16 +4,16 @@ const ADD_TO_CART = gql`
   mutation addToCart($id: ID!) {
     addToCart(id: $id) {
       items {
+        id
         description
         image
         name
-        price
-        reviews {
-          comment
-          rating
+        price {
+          initialPrice
+          totalPrice
         }
+        quantity
       }
-      quantity
     }
   }
 `;

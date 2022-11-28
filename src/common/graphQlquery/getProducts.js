@@ -5,19 +5,29 @@ const GET_PRODUCTS = gql`
     products(limit: $limit, afterCursor: $afterCursor) {
       totalCount
       edges {
-        cursor
-        node {
-          id
-          image
-          name
-          price
-          reviews {
-            comment
-            rating
-          }
-          description
+      cursor
+      node {
+        id
+        image
+        description
+        name
+        overview {
+          material
+          finish
+          features
+          color
+          brand
+        }
+        price {
+          totalPrice
+          initialPrice
+        }
+        reviews {
+          rating
+          comment
         }
       }
+    }
       pageInfo {
         hasNextPage
         startCursor

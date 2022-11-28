@@ -6,13 +6,13 @@ import store from './store';
 import client from './common/apollo-client';
 
 function App() {
-  return (
-    <Provider store={store}>
-      <ApolloProvider client={client}>
-        <Routing />
-      </ApolloProvider>
-    </Provider>
-  );
+	return (
+		<Provider store={store}>
+			<ApolloProvider client={client}>
+				<Routing />
+			</ApolloProvider>
+		</Provider>
+	);
 }
 
 export default App;

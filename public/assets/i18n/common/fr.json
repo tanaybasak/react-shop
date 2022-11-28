@@ -5,5 +5,9 @@
     "account": "Compte",
     "logout": "Se déconnecter",
     "brand": "réagir boutique",
-    "create": "créer"
+    "create": "créer",
+    "signIn": "Connectez-vous à votre compte",
+    "email" : "e-mail",
+    "password" : "Mot de passe",
+    "login": "CONNEXION"
 }

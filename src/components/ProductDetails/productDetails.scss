@@ -8,14 +8,48 @@
   .pd-rightcontainer {
     padding: 1rem;
     flex-basis: 50%;
-    .pd-title {
+    .pd-price {
       font-size: 1.5rem;
     }
-    .pd-overview {
+    .horizontal-line {
       border-bottom: 1px solid #ddd;
+    }
+    .pd-title {
       font-size: 2rem;
+      font-weight: 500;
+    }
+    .pd-overview {
       margin-top: 1rem;
       padding-bottom: 1rem;
+      color: #5858b0;
+      font-weight: 600;
+    }
+    .pd-overview-details {
+      .accordionButton:focus {
+        text-decoration: none;
+        box-shadow: none;
+      }
+      .accordionButton:hover {
+        text-decoration: none;
+      }
     }
   }
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.on {
+  color: #62ae22;
+}
+.off {
+  color: #ccc;
+}
+
+
+.addCartButton {
+  padding: 0.5rem 3rem;
 }
