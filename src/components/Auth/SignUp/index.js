@@ -12,9 +12,7 @@ function SignUp() {
 		<div className="container">
 			<div className="d-flex justify-content-center align-items-center p-5">
 				<div className="card">
-					<div className="card-body">
-						<Layout heading={headerSection} midSection={midSection} signIn={false} />
-					</div>
+					<Layout heading={headerSection} midSection={midSection} signIn={false} className="layout_card" />
 				</div>
 			</div>
 		</div>
