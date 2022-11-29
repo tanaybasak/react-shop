@@ -24,5 +24,15 @@ module.exports = {
 		'react/prop-types': 0,
 		'react/jsx-indent': [2, 'tab'],
 		'react/jsx-indent-props': [2, 'tab'],
+		'jsx-a11y/label-has-associated-control': ['error', {
+			required: {
+				some: ['nesting', 'id'],
+			},
+		}],
+		'jsx-a11y/label-has-for': ['error', {
+			required: {
+				some: ['nesting', 'id'],
+			},
+		}],
 	},
 };

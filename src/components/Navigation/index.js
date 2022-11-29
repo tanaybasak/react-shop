@@ -53,7 +53,7 @@ function Navigation() {
 				exact="true"
 				to="/products"
 			>
-				{logo(15)}
+				{logo(20)}
 			</NavLink>
 			<button
 				className="navbar-toggler"
