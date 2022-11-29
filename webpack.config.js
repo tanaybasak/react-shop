@@ -120,6 +120,7 @@ module.exports = {
 	plugins: [
 		new Dotenv({
 			path: './environments/.env',
+			systemvars: true,
 		}),
 		new MiniCssExtractPlugin({
 			filename: 'index.css',
