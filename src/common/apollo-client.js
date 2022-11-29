@@ -2,9 +2,10 @@ import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
-	// uri: `${process.env.REACTFURNI_BACKEND}`,
-	uri: 'https://reactfurnibackend.herokuapp.com/graphql'
+	uri: `${process.env.REACTFURNI_BACKEND}`,
+	// uri: 'https://reactfurnibackend.herokuapp.com/graphql'
 });
+console.log(process.env.REACTFURNI_BACKEND);
 
 const authLink = setContext((_, { headers }) => {
 	// get the authentication token from local storage if it exists
