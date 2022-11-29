@@ -5,7 +5,7 @@ function Layout({ heading, midSection, className }) {
 	const layout = (
 		<div className="p-5">
 			<div className="head_section pb-5 text-center">
-				<h3><b>{heading}</b></h3>
+				<b>{heading}</b>
 			</div>
 			<div className="mid_section">
 				{midSection}
