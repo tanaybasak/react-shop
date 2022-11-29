@@ -5,7 +5,7 @@ import Form from './Form';
 function Login() {
 	const header = (
 		<>
-			Signin to your account
+			Sign-in to your account
 		</>
 	);
 

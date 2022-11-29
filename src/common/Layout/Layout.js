@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Layout({ heading, midSection, className }) {
-	console.log(className);
 	const layout = (
 		<div className="p-5">
 			<div className="head_section pb-5 text-center">
