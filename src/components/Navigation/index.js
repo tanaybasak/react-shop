@@ -1,12 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
-import i18next from 'i18next';
-import { useTranslation } from 'react-i18next';
 import { NavLink, useLocation } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import auth from '../../authentication/firebase';
 // import { useQuery } from '@apollo/client';
-import i18n from '../../common/i18n';
 import logo from '../../../public/assets/icons/logo';
 import cartImg from '../../../public/assets/icons/cart.avif';
 import person from '../../../public/assets/icons/person.avif';
@@ -17,7 +14,6 @@ import './Navigation.scss';
 import GET_CARTITEMS from '../../common/graphQlquery/getCartItems';
 
 function Navigation() {
-	const { t } = useTranslation(['common']);
 	const { cart } = useContext(ShopContext);
 	const location = useLocation();
 	const [token, setToken] = useState(null);
@@ -35,12 +31,6 @@ function Navigation() {
 			setCartItems(cartData.cartItems.items.length);
 		}
 	}, [cartData]);
-	// setting language
-	useEffect(() => {
-		if (localStorage.getItem('i18nextLng').length > 2) {
-			i18next.changeLanguage('en');
-		}
-	}, []);
 
 	useEffect(() => {
 		if (cart) {
@@ -54,11 +44,6 @@ function Navigation() {
 			setToken(null);
 			// navigate('/home');
 		}).catch((error) => new Error(error));
-	};
-
-	// changing language for i18n
-	const handleChangeLanguage = (e) => {
-		i18n.changeLanguage(e.target.value);
 	};
 
 	return (
@@ -101,7 +86,7 @@ function Navigation() {
 								className="nav-link-icons"
 								loading="lazy"
 							/>
-							{t('cart')}
+							Cart
 							<span className="sr-only">(current)</span>
 						</NavLink>
 
@@ -118,7 +103,7 @@ function Navigation() {
 								className="nav-link-icons"
 								loading="lazy"
 							/>
-							{t('create')}
+							Create
 						</NavLink>
 					</li>
 					{token && (
@@ -135,7 +120,7 @@ function Navigation() {
 										className="nav-link-icons"
 										loading="lazy"
 									/>
-									{t('account')}
+									Account
 								</NavLink>
 								{/* </Link> */}
 							</li>
@@ -151,24 +136,12 @@ function Navigation() {
 										className="nav-link-icons"
 										loading="lazy"
 									/>
-									{t('logout')}
+									Logout
 								</NavLink>
 							</li>
 						</>
 					)}
 				</ul>
-				<form className="d-flex">
-					<select
-						className="form-select"
-						aria-label="language select"
-						onChange={handleChangeLanguage}
-						value={localStorage.getItem('i18nextLng')}
-					>
-						<option value="en"> En </option>
-						<option value="fr"> Fr </option>
-						<option value="es"> Es </option>
-					</select>
-				</form>
 			</div>
 		</nav>
 	);

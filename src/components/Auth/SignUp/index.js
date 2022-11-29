@@ -4,8 +4,6 @@ import Layout from '../../../common/Layout/Layout';
 import Form from '../Login/Form';
 
 function SignUp() {
-	// const { t } = useTranslation(['common']);
-
 	const headerSection = <>Sign up</>;
 
 	const midSection = <Form />;

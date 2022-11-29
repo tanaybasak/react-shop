@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
-import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../../authentication/firebase';
 
 function Form({ signIn }) {
 	const [username, setUserName] = useState(null);
 	const [userPassword, setPassword] = useState(null);
-	const { t } = useTranslation(['common']);
 	const navigate = useNavigate();
 
 	const handleLogin = (email, password) => {
@@ -34,12 +32,12 @@ function Form({ signIn }) {
 	return (
 		<form>
 			<div className="form-group">
-				<label htmlFor="exampleInputEmail1">{t('email')}</label>
+				<label htmlFor="exampleInputEmail1"> Email</label>
 				<input type="email" className="form-control" onChange={(e) => setUserName(e.target.value)} id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
 				<small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
 			</div>
 			<div className="form-group">
-				<label htmlFor="exampleInputPassword1">{t('password')}</label>
+				<label htmlFor="exampleInputPassword1">Password</label>
 				<input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} id="exampleInputPassword1" placeholder="Password" />
 			</div>
 			<button
