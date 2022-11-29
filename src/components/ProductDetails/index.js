@@ -1,5 +1,7 @@
 import { useMutation, useQuery } from '@apollo/client';
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, {
+	useContext, useEffect, useRef, useState,
+} from 'react';
 import { useParams } from 'react-router-dom';
 import ADD_TO_CART from '../../common/graphQlquery/addToCart';
 import GET_PRODUCTSBYID from '../../common/graphQlquery/getProductsById';

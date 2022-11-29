@@ -132,7 +132,8 @@ function Navigation() {
 										alt=""
 										src={person}
 										className="nav-link-icons"
-										loading="lazy" />
+										loading="lazy"
+									/>
 									{t('account')}
 								</NavLink>
 								{/* </Link> */}
@@ -147,7 +148,8 @@ function Navigation() {
 										alt=""
 										src={logout}
 										className="nav-link-icons"
-										loading="lazy" />
+										loading="lazy"
+									/>
 									{t('logout')}
 								</NavLink>
 							</li>

@@ -9,13 +9,12 @@ function Provider({ children }) {
 		<ShopContext.Provider
 			value={{
 				cart,
-				updateCartItem: data => addToCartData(data),
+				updateCartItem: (data) => addToCartData(data),
 			}}
 		>
 			{children}
 		</ShopContext.Provider>
 	);
-};
-
+}
 
 export default Provider;
