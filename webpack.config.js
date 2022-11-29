@@ -43,7 +43,6 @@ module.exports = {
 
 	target: 'web',
 	devServer: {
-		contentBase: './build',
 		/** "port"
 	 * port of dev server
 	 */
