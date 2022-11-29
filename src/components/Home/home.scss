@@ -1,20 +1,43 @@
-
-
-.flex-left, .flex-right {
-   flex: 50%;
+.flex-left,
+.flex-right {
+  flex: 0 0 50%;
 }
 
 .flex-container {
-    flex-direction: row;
+  flex-direction: row;
+}
+
+.layout_card {
+  box-shadow: 0px 10px 20px 0px rgb(0 0 0 / 10%), 0px 0px 6px 6px rgb(0 0 0 / 10%);
+}
+
+.left_background {
+  background: url('https://login.paddle.com/static/media/circles-bg.d775f2a29fd5b233570fcba404385f39.svg') left bottom no-repeat,
+    linear-gradient(220deg, rgb(43, 50, 66), rgb(14, 20, 20));
 }
 
 .img_item {
-    height: 4rem;
-    padding: 1rem;
+  height: 4rem;
+  padding: 1rem;
+}
+
+.home_login {
+  min-height: 100vh;
+}
+
+.heading {
+  font-size: 1.5rem;
+  padding: 4rem 0rem 0rem 0rem;
+  color: #fff;
+}
+.heading-account {
+  font-size: 1rem;
+  // padding: 2rem 0rem 2rem 0rem;
+  color: #fff;
 }
 
 @media (max-width: 800px) {
-    .flex-container {
-      flex-direction: column;
-    }
+  .flex-container {
+    flex-direction: column;
   }
+}

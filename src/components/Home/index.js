@@ -1,53 +1,41 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Layout from '../../common/Layout/Layout';
 import Login from '../Auth/Login';
+import logo from '../../../public/assets/icons/logo';
 import './home.scss';
 
 function Home() {
-	const navigate = useNavigate();
-
-	const header = (
-		<>
-			New Customer?
-		</>
-	);
-
 	const subSection = (
 		<>
 			<div className="subContent">
-				<p>
-					Create an account with us and you'll be able to:
-				</p>
-				<ul className="list-unstyled">
-					<li> Check out faster</li>
-					<li>Save multiple shipping addresses</li>
-					<li>Access your order history</li>
-					<li>Track new orders</li>
-					<li>Save items to your Wish List</li>
-				</ul>
+				<div className="header_logo mb-5">{logo(50)}</div>
+				<div className="heading"><p>Welcome back to Expo!</p></div>
 			</div>
-			<div className="buttonContent">
-				<button
-					className="btn btn-dark btn-block mt-4"
-					onClick={() => navigate('/signUp')}
-					type="button"
-				>
-					Create User
-				</button>
+			<div className="heading-account">
+				<p>
+					Don't have an account ?
+					<Link
+						to="/signUp"
+						type="button"
+						style={{ paddingLeft: '0.5rem' }}
+					>
+						Create User
+					</Link>
+				</p>
 			</div>
 		</>
 	);
 
 	return (
 
-		<div className="d-flex flex-container p-5 container">
-			<div className="flex-left">
+		<div className="d-flex flex-container h-100 home_login">
+			<div className="flex-left left_background">
+				<Layout midSection={subSection} />
+			</div>
+			<div className="flex-right justify-content-center align-items-center d-flex">
 				<Login />
 
-			</div>
-			<div className="flex-right">
-				<Layout heading={header} midSection={subSection} />
 			</div>
 		</div>
 

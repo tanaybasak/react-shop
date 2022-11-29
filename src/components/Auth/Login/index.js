@@ -15,7 +15,7 @@ function Login() {
 	const midSection = <Form signIn />;
 
 	return (
-		<Layout heading={header} midSection={midSection} />
+		<Layout heading={header} midSection={midSection} className="layout_card" />
 	);
 }
 

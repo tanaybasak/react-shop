@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
-import Navigation from '../components/Navigation/Navigation';
+import Navigation from '../components/Navigation';
 import AppRoutes from './route';
 import Provider from '../common/shopContext';
 import ErrorFallback from '../components/ErrorBoundary';
@@ -13,7 +13,6 @@ function Routing() {
 			<ErrorBoundary FallbackComponent={ErrorFallback}>
 				<Suspense fallback={<Loader />}>
 					<Provider>
-						<Navigation />
 						<AppRoutes />
 					</Provider>
 				</Suspense>

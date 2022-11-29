@@ -7,6 +7,7 @@ import { signOut } from 'firebase/auth';
 import auth from '../../authentication/firebase';
 // import { useQuery } from '@apollo/client';
 import i18n from '../../common/i18n';
+import logo from '../../../public/assets/icons/logo';
 import cartImg from '../../../public/assets/icons/cart.avif';
 import person from '../../../public/assets/icons/person.avif';
 import logout from '../../../public/assets/icons/logout.avif';
@@ -67,7 +68,7 @@ function Navigation() {
 				exact="true"
 				to="/products"
 			>
-				<img src={cartImg} alt="cart" />
+				{logo}
 			</NavLink>
 			<button
 				className="navbar-toggler"
