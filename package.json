@@ -6,7 +6,7 @@
   "scripts": {
     "webpack-dev-server": "webpack-dev-server",
     "dev": "webpack-dev-server --mode=development",
-    "prod": "webpack --mode=production",
+    "prod": "webpack --mode=production && echo '/* /index.html 200' | cat >build/_redirects",
     "lint": "eslint src --fix",
     "test": "test"
   },
