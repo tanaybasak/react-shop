@@ -4,6 +4,7 @@ const Dotenv = require('dotenv-webpack');
 const glob = require('glob');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /*We are basically telling webpack to take index.js from entry. Then check for all file extensions in resolve. 
 After that apply all the rules in module.rules and produce the output and place it in main.js in the public folder.*/
@@ -42,6 +43,7 @@ module.exports = {
 
 	target: 'web',
 	devServer: {
+		contentBase: './build',
 		/** "port"
 	 * port of dev server
 	 */
@@ -128,6 +130,9 @@ module.exports = {
 		}),
 		new PurgecssPlugin({
 			paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+		}),
+		new HtmlWebpackPlugin({
+			template: path.resolve('./public/index.html'),
 		}),
 	],
 };
