@@ -31,7 +31,7 @@ function Home() {
 
 		<div className="d-flex flex-container h-100 home_login">
 			<div className="flex-left left_background">
-				<Layout midSection={subSection} />
+				<Layout midSection={subSection} className="layout-card" />
 			</div>
 			<div className="flex-right justify-content-center align-items-center d-flex">
 				<Login />
