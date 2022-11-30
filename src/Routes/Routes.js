@@ -1,11 +1,10 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
-import Navigation from '../components/Navigation';
 import AppRoutes from './route';
 import Provider from '../common/shopContext';
 import ErrorFallback from '../components/ErrorBoundary';
-import Loader from '../common/Loader/Loader';
+import Loader from '../common/components/Loader';
 
 function Routing() {
 	return (

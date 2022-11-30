@@ -1,6 +1,6 @@
 import React from 'react';
 import './signUp.scss';
-import Layout from '../../../common/Layout/Layout';
+import Layout from '../../../common/components/Layout';
 import Form from '../Login/Form';
 
 function SignUp() {
