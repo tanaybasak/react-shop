@@ -1,14 +1,23 @@
+import { Workbox } from 'workbox-window';
+
 function serviceworker() {
+	if (process.env.NODE_ENV !== 'production') {
+		return;
+	}
+
 	if ('serviceWorker' in navigator) {
-		// Register a service worker hosted at the root of the
-		// site using the default scope.
-		navigator.serviceWorker.register('/sw.js').then((registration) => {
-			console.log('Service worker registration succeeded:', registration);
-		}).catch((error) => {
-			console.error(`Service worker registration failed: ${error}`);
+		const wb = new Workbox('sw.js');
+
+		wb.addEventListener('installed', (e) => {
+			if (!e.isUpdate) {
+				console.log('Service worker activated for the first time!');
+
+				// If your service worker is configured to precache assets, those
+				// assets should all be available now.
+			}
 		});
-	} else {
-		console.error('Service workers are not supported.');
+
+		wb.register();
 	}
 }
 

@@ -2,7 +2,7 @@ const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const { InjectManifest } = require('workbox-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 const rootDir = path.resolve(__dirname, '');
@@ -112,6 +112,10 @@ module.exports = {
 		],
 	},
 	plugins: [
+		new InjectManifest({
+			swSrc: './src/sw.js',
+			swDest: 'sw.js',
+		}),
 		new Dotenv({
 			path: './environments/.env',
 			systemvars: true,
