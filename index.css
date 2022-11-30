@@ -6,6 +6,13 @@ body {
     height: 100%;
 }
 
+@media (max-width: 800px) {
+    .flex-container, .pd {
+      flex-direction: column;
+    }
+  }
+  
+
 .nav-link-icons {
     height: 1.5rem;
     padding-right: 0.4rem;

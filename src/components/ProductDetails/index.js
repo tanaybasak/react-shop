@@ -14,7 +14,7 @@ function ProductDetails() {
 	const headingOneRef = useRef(null);
 	const headingThreeRef = useRef(null);
 	const [productDetails, setProductDetails] = useState({});
-	const { updateCartItem } = useContext(ShopContext);
+	const { updateCartItem, updateToastInfo } = useContext(ShopContext);
 	const [addToCartData, { data }] = useMutation(ADD_TO_CART);
 	const {
 		loading: productsLoading,
@@ -42,6 +42,7 @@ function ProductDetails() {
 	};
 
 	const addToCart = () => {
+		updateToastInfo({ title: 'Added To Cart ', message: '', showToast: true });
 		addToCartData({
 			variables: {
 				id: id.toString(),
