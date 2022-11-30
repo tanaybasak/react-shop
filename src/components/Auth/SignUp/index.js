@@ -9,11 +9,9 @@ function SignUp() {
 	const midSection = <Form />;
 
 	return (
-		<div className="container">
-			<div className="d-flex justify-content-center align-items-center p-5">
-				<div className="card">
-					<Layout heading={headerSection} midSection={midSection} signIn={false} className="layout_card" />
-				</div>
+		<div className="d-flex justify-content-center align-items-center vh-100">
+			<div className="card">
+				<Layout heading={headerSection} midSection={midSection} signIn={false} className="layout_card" />
 			</div>
 		</div>
 	);
