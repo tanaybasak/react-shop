@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../../common/components/Layout';
 import Login from '../Auth/Login';
-import logo from '../../../public/assets/icons/logo';
+import logo from '../../common/utils/logo';
 import './home.scss';
 import { ShopContext } from '../../common/shopContext';
 import Notification from '../../common/components/Notification';

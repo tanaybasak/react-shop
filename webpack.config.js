@@ -1,15 +1,13 @@
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
-const glob = require('glob');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const PurgecssPlugin = require('purgecss-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const PATHS = {
-	src: path.join(__dirname, 'src'),
-};
+const CopyPlugin = require('copy-webpack-plugin');
 
+const rootDir = path.resolve(__dirname, '');
+const srcDir = path.resolve(rootDir, 'public');
+const distDir = path.resolve(rootDir, 'build');
 
 module.exports = {
 	/** "mode"
@@ -30,7 +28,7 @@ module.exports = {
 		/** "filename"
 	 * the name of the output file
 	 */
-		filename: 'main.js',
+		filename: '[name].js',
 	},
 
 	/** "target"
@@ -84,9 +82,9 @@ module.exports = {
 
 		rules: [
 			{
-				test: /\.(js|jsx)$/, //kind of file extension this rule should look for and apply in test
-				exclude: /node_modules/, //folder to be excluded
-				use: 'babel-loader', //loader which we are going to use
+				test: /\.(js|jsx)$/, // kind of file extension this rule should look for and apply in test
+				exclude: /node_modules/, // folder to be excluded
+				use: 'babel-loader', // loader which we are going to use
 			},
 			{
 				test: /\.(scss|css)$/,
@@ -99,14 +97,6 @@ module.exports = {
 						loader: 'css-loader',
 					},
 					{
-						loader: 'postcss-loader',
-						options: {
-							postcssOptions: {
-								plugins: () => [require('autoprefixer')],
-							},
-						},
-					},
-					{
 						loader: 'sass-loader',
 					},
 				],
@@ -114,6 +104,10 @@ module.exports = {
 			{
 				test: /.(png|jpe?g|gif|webp|avif|svg)$/i,
 				use: [{ loader: 'file-loader' }],
+			},
+			{
+				test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3)$/,
+				type: 'asset/resource',
 			},
 		],
 	},
@@ -125,11 +119,16 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: 'index.css',
 		}),
-		new PurgecssPlugin({
-			paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
-		}),
 		new HtmlWebpackPlugin({
 			template: path.resolve('./public/index.html'),
+			favicon: './public/assets/icons/favicon.png',
+			// manifest: path.resolve('public/manifest.json'),
+		}),
+		new CopyPlugin({
+			patterns: [
+				{ from: `${srcDir}/assets`, to: `${distDir}/assets` },
+				{ from: `${srcDir}/manifest.json` },
+			],
 		}),
 	],
 };

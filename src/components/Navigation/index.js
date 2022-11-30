@@ -4,7 +4,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import auth from '../../authentication/firebase';
 // import { useQuery } from '@apollo/client';
-import logo from '../../../public/assets/icons/logo';
+import logo from '../../common/utils/logo';
 import cartImg from '../../../public/assets/icons/cart.avif';
 import person from '../../../public/assets/icons/person.avif';
 import logout from '../../../public/assets/icons/logout.avif';
