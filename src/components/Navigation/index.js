@@ -17,6 +17,7 @@ function Navigation() {
 	const { cart } = useContext(ShopContext);
 	const location = useLocation();
 	const [token, setToken] = useState(null);
+	const [showNav, setShowNav] = useState(false);
 	const { data: cartData } = useQuery(GET_CARTITEMS, {
 		fetchPolicy: 'cache-and-network',
 	});
@@ -38,6 +39,10 @@ function Navigation() {
 		}
 	}, [cart]);
 
+	const handleNavList = () => {
+		setShowNav(!showNav);
+	};
+
 	const logoutFromCart = () => {
 		signOut(auth).then(() => {
 			sessionStorage.removeItem('Auth Token');
@@ -47,7 +52,7 @@ function Navigation() {
 	};
 
 	return (
-		<nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar-height">
+		<nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar-height pt-3 pb-3">
 			<NavLink
 				className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
 				exact="true"
@@ -56,20 +61,20 @@ function Navigation() {
 				{logo(20)}
 			</NavLink>
 			<button
-				className="navbar-toggler"
+				className={`navbar-toggler ${!showNav ? 'collapsed' : ''}`}
 				type="button"
 				data-toggle="collapse"
 				data-target="#navbarScroll"
 				aria-controls="navbarScroll"
 				aria-expanded="false"
 				aria-label="Toggle navigation"
+				onClick={handleNavList}
 			>
 				<span className="navbar-toggler-icon" />
 			</button>
-			<div className="collapse navbar-collapse" id="navbarScroll">
+			<div className={`collapse navbar-collapse ${showNav ? 'show' : ''}`} id="navbarScroll">
 				<ul
-					className="navbar-nav ml-auto my-2 my-lg-0 navbar-nav-scroll"
-					style={{ maxHeight: 100 }}
+					className="navbar-nav ml-auto my-2 my-lg-0"
 				>
 					<li className="nav-item">
 						<NavLink
