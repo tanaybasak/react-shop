@@ -112,10 +112,11 @@ module.exports = {
 		],
 	},
 	plugins: [
-		new InjectManifest({
-			swSrc: './src/sw.js',
-			swDest: 'sw.js',
-		}),
+		// new InjectManifest({
+		// 	swSrc: './src/sw.js',
+		// 	swDest: 'sw.js',
+		// 	maximumFileSizeToCacheInBytes: 10485760, // 10M
+		// }),
 		new Dotenv({
 			path: './environments/.env',
 			systemvars: true,
