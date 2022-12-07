@@ -3,7 +3,6 @@ import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
 	uri: `${process.env.REACTFURNI_BACKEND}`,
-	// uri: 'http://localhost:5000/graphql'
 });
 
 const authLink = setContext((_, { headers }) => {
