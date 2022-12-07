@@ -2,7 +2,7 @@ import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
-	uri: `${process.env.REACTFURNI_BACKEND}`,
+	uri: 'https://reactfurnibackend.onrender.com/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
