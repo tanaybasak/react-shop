@@ -84,8 +84,8 @@ function ProductDetails() {
 			<div className="pd-rightcontainer">
 				<div className="pd-title display-3">{productDetails.name}</div>
 				<div className="pd-price pb-1">
-					Rs.
-					{productDetails.price?.initialPrice.toLocaleString()}
+					{/* Rs.
+					{productDetails.price?.initialPrice.toLocaleString()} */}
 				</div>
 				<div className="pd-description lead">{productDetails.description}</div>
 				<button type="button" className="btn btn-dark mb-4 mt-4 addCartButton" onClick={addToCart}> Add To Cart </button>

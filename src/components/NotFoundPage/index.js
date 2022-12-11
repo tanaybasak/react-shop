@@ -1,5 +1,5 @@
 import React from 'react';
-import errorImg from '../../../public/assets/icons/404.png';
+import errorImg from '../../assets/icons/404.png';
 import './NotFound.scss';
 
 function NotFoundPage() {
